@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Sleeper;
 import org.testng.Assert;
 
 public class OP_contacts {
@@ -44,6 +45,23 @@ public class OP_contacts {
 	By add_contact = By.xpath("//button[.='Add']");
 	
 	
+	
+	// Data mapping xpath
+	
+	By first_name = By.xpath("//select[@ng-model='first_name']");
+	By sur_name = By.xpath("//select[@ng-model='surname']");
+	By email_ID = By.xpath("//select[@ng-model='email']");
+	By salu_tation = By.xpath("//select[@ng-model='salutation']");
+	By IP_address = By.xpath("//select[@ng-model='ip_address']");
+	By Birth = By.xpath("//select[@ng-model='dob']");
+	By post_code = By.xpath("//select[@ng-model='postalcode']");
+	By gen_der = By.xpath("//select[@ng-model='gender']");
+	By loc_ation = By.xpath("//select[@ng-model='location']");
+	By Source = By.xpath("//select[@ng-model='optinsrc']");
+	By date = By.xpath("//select[@ng-model='optindate']");
+	By time = By.xpath("//select[@ng-model='optintime']");
+	By add_btn = By.xpath("//button[.='add']");
+	
 	public void Opendcontact() throws InterruptedException {
 		
 		// By using filter , search and status a contact and publisher
@@ -68,7 +86,7 @@ public class OP_contacts {
 		
 		// create a contact ....
 		
-		
+		Thread.sleep(2000);
 		driver.findElement(create_contact).click();
 		Thread.sleep(2000);
 		WebElement PB_name_drop = driver.findElement(publisher_drop);
@@ -116,7 +134,7 @@ public class OP_contacts {
 		js_01.executeScript("window.scrollBy(0,550)");
 		Thread.sleep(2000);
 		WebElement upload_file = driver.findElement(upload);
-		upload_file.sendKeys("/home/active34/Documents/B2C Contact LIst/B2C folder/CTest02_B2C_250.csv");
+		upload_file.sendKeys("/home/active34/eclipse-workspace/opend_02/src/test/resources/Data_Opend.csv");
 		Thread.sleep(2000);  
 		driver.findElement(Default_name).sendKeys("Test Mails");
 		Thread.sleep(2000);
@@ -130,6 +148,59 @@ public class OP_contacts {
 		driver.findElement(add_contact).click();
 		
 		// Data mapping 
+		
+		WebElement firstname = driver.findElement(first_name);
+		Select sel1 = new Select(firstname);
+		sel1.selectByVisibleText("First Name");
+		Thread.sleep(2000);
+		WebElement surname = driver.findElement(sur_name);
+		Select sel2 = new Select(surname);
+		sel2.selectByVisibleText("Sur Name");
+		Thread.sleep(2000);
+		WebElement ID_email = driver.findElement(email_ID);
+		Select sel3 = new Select(ID_email);
+		sel3.selectByVisibleText("Email");
+		Thread.sleep(2000);
+		WebElement salutation_ID = driver.findElement(salu_tation);
+		Select sel4 = new Select(salutation_ID);
+		sel4.selectByVisibleText("salutation");
+		Thread.sleep(2000);
+		WebElement Address = driver.findElement(IP_address);
+		Select sel5 = new Select(Address);
+		sel5.selectByVisibleText("ipaddress");
+		Thread.sleep(2000);
+		WebElement Date_of_Birth = driver.findElement(Birth);
+		Select sel6 = new Select(Date_of_Birth);
+		sel6.selectByVisibleText("dob");
+		Thread.sleep(2000);
+		WebElement Postal_code = driver.findElement(post_code);
+		Select  sel7 = new Select(Postal_code);
+		sel7.selectByVisibleText("post code");
+		Thread.sleep(2000);
+		WebElement Genndder = driver.findElement(gen_der);
+		Select sel8 = new Select(Genndder);
+		sel8.selectByVisibleText("gender");
+		Thread.sleep(1000);
+		WebElement locate = driver.findElement(loc_ation);
+		Select sel9 = new Select(locate);
+		sel9.selectByVisibleText("country");
+		Thread.sleep(1000);
+		WebElement Opt_in_source = driver.findElement(Source);
+		Select sel10 = new Select(Opt_in_source);
+		sel10.selectByVisibleText("optinsource");
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(1000);
+		WebElement opt_in_date = driver.findElement(date);
+		Select sel11 = new Select(opt_in_date);
+		sel11.selectByVisibleText("optindate");
+		Thread.sleep(1000);
+		WebElement opt_in_time = driver.findElement(time);
+		Select sel12 = new Select(opt_in_time);
+		sel12.selectByVisibleText("optintime");
+		Thread.sleep(1000);
+		driver.findElement(add_btn).click();
 		
 	}
 	

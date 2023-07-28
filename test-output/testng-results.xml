@@ -2,37 +2,60 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-12T10:35:15 IST" name="Default suite" finished-at="2023-07-12T10:36:59 IST" duration-ms="104336">
+  <suite started-at="2023-07-20T14:03:25 IST" name="Default suite" finished-at="2023-07-20T14:04:48 IST" duration-ms="83238">
     <groups>
     </groups>
-    <test started-at="2023-07-12T10:35:15 IST" name="Default test" finished-at="2023-07-12T10:36:59 IST" duration-ms="104336">
+    <test started-at="2023-07-20T14:03:25 IST" name="Default test" finished-at="2023-07-20T14:04:48 IST" duration-ms="83238">
       <class name="com.opend.testcases.Opend_Scenarios">
-        <test-method is-config="true" signature="Beforeclass()[pri:0, instance:com.opend.testcases.Opend_Scenarios@1349883]" started-at="2023-07-12T10:35:15 IST" name="Beforeclass" finished-at="2023-07-12T10:36:22 IST" duration-ms="66642" status="PASS">
+        <test-method is-config="true" signature="Beforeclass()[pri:0, instance:com.opend.testcases.Opend_Scenarios@2767e23c]" started-at="2023-07-20T14:03:25 IST" name="Beforeclass" finished-at="2023-07-20T14:03:31 IST" duration-ms="6016" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Beforeclass -->
-        <test-method signature="OP_LoginOperation()[pri:1, instance:com.opend.testcases.Opend_Scenarios@1349883]" started-at="2023-07-12T10:36:22 IST" name="OP_LoginOperation" finished-at="2023-07-12T10:36:31 IST" duration-ms="9423" status="PASS">
+        <test-method signature="OP_LoginOperation()[pri:1, instance:com.opend.testcases.Opend_Scenarios@2767e23c]" started-at="2023-07-20T14:03:31 IST" name="OP_LoginOperation" finished-at="2023-07-20T14:03:40 IST" duration-ms="9384" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OP_LoginOperation -->
-        <test-method signature="OP_NormalcampaignOPeration()[pri:3, instance:com.opend.testcases.Opend_Scenarios@1349883]" started-at="2023-07-12T10:36:31 IST" name="OP_NormalcampaignOPeration" finished-at="2023-07-12T10:36:59 IST" duration-ms="27968" status="FAIL">
+        <test-method signature="OP_NormalcampaignOPeration()[pri:3, instance:com.opend.testcases.Opend_Scenarios@2767e23c]" started-at="2023-07-20T14:03:40 IST" name="OP_NormalcampaignOPeration" finished-at="2023-07-20T14:04:48 IST" duration-ms="67601" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Cannot locate option with text: UK Consumer Data
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//button[.='Proceed'])[3]"}
+  (Session info: chrome=113.0.5672.92)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-76-generic', java.version: '17.0.5'
-Driver info: driver.version: unknown]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc5a487252945e68eda3fa32a3242e8d, findElement {using=xpath, value=(//button[.='Proceed'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: /tmp/.com.google.Chrome.0kPRvt}, goog:chromeOptions: {debuggerAddress: localhost:43553}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43553/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc5a487252945e68eda3fa32a3242e8d]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: UK Consumer Data
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//button[.='Proceed'])[3]"}
+  (Session info: chrome=113.0.5672.92)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-76-generic', java.version: '17.0.5'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:153)
-at com.Opend.OP_NormalCampaign.Normalcampaign_01(OP_NormalCampaign.java:112)
-at com.opend.testcases.Opend_Scenarios.OP_NormalcampaignOPeration(Opend_Scenarios.java:36)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc5a487252945e68eda3fa32a3242e8d, findElement {using=xpath, value=(//button[.='Proceed'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: /tmp/.com.google.Chrome.0kPRvt}, goog:chromeOptions: {debuggerAddress: localhost:43553}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43553/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc5a487252945e68eda3fa32a3242e8d
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.Opend.OP_NormalCampaign.Normalcampaign_01(OP_NormalCampaign.java:180)
+at com.opend.testcases.Opend_Scenarios.OP_NormalcampaignOPeration(Opend_Scenarios.java:46)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -67,7 +90,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OP_NormalcampaignOPeration -->
-        <test-method is-config="true" signature="Afterclass()[pri:0, instance:com.opend.testcases.Opend_Scenarios@1349883]" started-at="2023-07-12T10:36:59 IST" name="Afterclass" finished-at="2023-07-12T10:36:59 IST" duration-ms="153" status="PASS">
+        <test-method is-config="true" signature="Afterclass()[pri:0, instance:com.opend.testcases.Opend_Scenarios@2767e23c]" started-at="2023-07-20T14:04:48 IST" name="Afterclass" finished-at="2023-07-20T14:04:48 IST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Afterclass -->

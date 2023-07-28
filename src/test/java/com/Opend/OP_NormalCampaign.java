@@ -1,7 +1,6 @@
 package com.Opend;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 import java.util.Set;
 
@@ -9,10 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
-import dev.failsafe.internal.util.Assert;
+import org.testng.Assert;
 
 public class OP_NormalCampaign {
 
@@ -21,7 +18,7 @@ public class OP_NormalCampaign {
 		this.driver= driver;
 	}
 	By Campaign01= By.xpath("//li[@class='campaigns-menu removeLSB']");
-	By create_btn = By.xpath("//a[.=' Start New Campaign']");
+	//By create_btn = By.xpath("//a[.=' Start New Campaign']");
 	By dropdown_01 = By.xpath("//select[@ng-model='campaign_status']");
 	//By dropdown_02 = By.xpath("//select[@ng-model='selectuser']");
 	By dropdown_02 = By.xpath("By dropdown_02 = By.xpath(\"//select[@ng-model='selectuser']\");");
@@ -33,7 +30,7 @@ public class OP_NormalCampaign {
 	By country = By.xpath("(//select[@ng-model='country_iso'])[1]");
 	By Aud_Reach =By.xpath("(//select[@ng-model='audience_type'])[1]");
 	By Camp_category = By.xpath("(//input[@ng-model='audience_category_text'])[1]");
-	By Categ_option = By.xpath("(//label[.='Automotive'])[2]");
+	By Categ_option = By.xpath("//label[.='Automotive']");
 	By Btn =By.xpath("(//button[.='Select'])[2]");
 	By Sub_Categ = By.xpath("(//input[@ng-model='functionalareaText'])[1]");
 	By Sub_categ_option = By.xpath("(//label[.='Select All'])[1]");
@@ -52,6 +49,8 @@ public class OP_NormalCampaign {
 	By first_name= By.xpath("(//a[.='{first name}'])[1]");
 	By Template_Saved = By.id("uploadBtn1");
 	By Select_Template = By.xpath("(//button[.='Select'])[1]");
+	By Temp_Frame = By.xpath("//iframe[@title='Rich Text Editor, email_ckeditor']");
+	By Edit_body = By.xpath("//body[@contenteditable='true']");
 	By proseed_01 = By.xpath("(//button[.='Proceed'])[3]");
 	
 	// Third Step of campaign Xpath (Element Address)
@@ -93,6 +92,7 @@ public class OP_NormalCampaign {
 		driver.findElement(Editable).click();
 		Thread.sleep(2000);
 		System.out.println("First Step of Campaign");
+		Thread.sleep(2000);
 		driver.findElement(camp_name).sendKeys("Test Suff Open");
 		Thread.sleep(2000);
 		WebElement  Camp_Group_drop= driver.findElement(Camp_Group);
@@ -106,7 +106,7 @@ public class OP_NormalCampaign {
 		sel_03.selectByVisibleText("United Kingdom");
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,150)");
+		js.executeScript("window.scrollBy(0,506)");
 		WebElement Audience_Reach = driver.findElement(Aud_Reach);
 		Select sel_04 = new Select(Audience_Reach);
 		sel_04.selectByVisibleText("UK Consumer Data");
@@ -122,16 +122,14 @@ public class OP_NormalCampaign {
 		Thread.sleep(2000);
 		driver.findElement(Btn).click();
 		Thread.sleep(3000);
-		JavascriptExecutor js_1 = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,200)");
 		driver.findElement(Sub_Categ).click();
 		Thread.sleep(2000);
 		Set<String> Pid01 = driver.getWindowHandles();
 		for(String id1 :Pid01) {
 			driver.switchTo().window(id1);
 		Thread.sleep(2000);
-		//driver.findElement(Sub_categ_option).click();
-		//Thread.sleep(2000);
+		driver.findElement(Sub_categ_option).click();
+		Thread.sleep(2000);
 		driver.findElement(Categ_Btn).click();
 		Thread.sleep(2000);
 		driver.findElement(PB).click();
@@ -150,6 +148,7 @@ public class OP_NormalCampaign {
 		WebElement text = driver.findElement(verify_name);
 		String actual_text= "Campaign Template";
 		String Expected_Text = text.getText();
+		Assert.assertEquals(actual_text, Expected_Text);
 		System.out.println(Expected_Text);
 		Thread.sleep(2000);
 		//Assert.assertEquals(actual_text, Expected_Text);
@@ -162,18 +161,22 @@ public class OP_NormalCampaign {
 		driver.findElement(first_name).click();
 		Thread.sleep(2000);
 		JavascriptExecutor js_03 = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,200)");
-		driver.findElement(Template_Saved).click();
-		Thread.sleep(2000);
-		Set<String> Pid_03 =driver.getWindowHandles();
-		for(String id_03 :Pid_03) {
-			driver.switchTo().window(id_03);
-		}
-		driver.findElement(Select_Template).click();
-		Thread.sleep(2000);
-		JavascriptExecutor js_04 = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,250)");
-		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,527)");
+//		driver.findElement(Template_Saved).click();
+//		Thread.sleep(2000);
+//		Set<String> Pid_03 =driver.getWindowHandles();
+//		for(String id_03 :Pid_03) {
+//			driver.switchTo().window(id_03);
+//		}
+//		driver.findElement(Select_Template).click();
+//		Thread.sleep(2000);
+		WebElement Frame = driver.findElement(Temp_Frame);
+		driver.switchTo().frame(Frame);
+		driver.findElement(Edit_body).sendKeys("aaaaaaaaa");
+		
+//		JavascriptExecutor js_04 = (JavascriptExecutor)driver;
+//		js.executeScript("window.scrollBy(0,900)");
+		Thread.sleep(4000);
 		driver.findElement(proseed_01).click();
 		Thread.sleep(4000);
 		

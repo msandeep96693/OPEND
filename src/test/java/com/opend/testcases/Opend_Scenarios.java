@@ -1,5 +1,9 @@
 package com.opend.testcases;
 
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -9,6 +13,8 @@ import com.Opend.OP_Loginpage;
 import com.Opend.OP_NormalCampaign;
 import com.Opend.OP_contacts;
 import com.Opend.OP_creatives;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 
 
 public class Opend_Scenarios extends OP_Base{
@@ -19,10 +25,14 @@ public class Opend_Scenarios extends OP_Base{
 	OP_creatives Create;
 	OP_contacts contact;
 	
+
+	
 	@Test(priority = 1)
 	public void OP_LoginOperation() throws InterruptedException {
+		  
 		Login = new OP_Loginpage(driver);
 		Login.opendlogin();
+	    
 	}
 	
 	@Test(priority = 2, enabled = false)
@@ -30,7 +40,7 @@ public class Opend_Scenarios extends OP_Base{
 		board = new OP_Dashboard(driver);
 		board.OpendDashboard();
 	}
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void OP_NormalcampaignOPeration() throws InterruptedException {
 		NCampaign = new OP_NormalCampaign(driver);
 		NCampaign.Normalcampaign_01();
@@ -40,10 +50,15 @@ public class Opend_Scenarios extends OP_Base{
 		Create = new OP_creatives(driver);
 		Create.OpendCreative();
 	}
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void OP_contactoperation() throws InterruptedException {
 		contact = new OP_contacts(driver);
 		contact.Opendcontact();
 	}
+	
+	
+
+	
+	
 
 }
